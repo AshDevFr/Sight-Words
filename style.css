@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222;
+  }
+  
+  .rotating-text {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 128px;
+    color: white;
+  }
+  .rotating-text p {
+    display: inline-flex;
+    margin: 0;
+    vertical-align: top;
+    align-items: center;
+    justify-content: center;
+  }
+  .rotating-text p .word {
+    position: absolute;
+    display: flex;
+    opacity: 0;
+  }
+  .rotating-text p .word .letter {
+    transform-origin: center center 25px;
+  }
+  .rotating-text p .word .letter.out {
+    transform: rotateX(90deg);
+    transition: 0.05s cubic-bezier(0.6, 0, 0.7, 0.2);
+  }
+  .rotating-text p .word .letter.in {
+    transition: 0.05s ease;
+  }
+  .rotating-text p .word .letter.behind {
+    transform: rotateX(-90deg);
+  }
+  
+  .word:nth-child(5n) {
+    color: #e74c3c;
+  }
+  
+  .word:nth-child(5n+1) {
+    color: #8e44ad;
+  }
+  
+  .word:nth-child(5n+2) {
+    color: #3498db;
+  }
+  
+  .word:nth-child(5n+3) {
+    color: #2ecc71;
+  }
+  
+  .word:nth-child(5n+4) {
+    color: #f1c40f;
+  }
